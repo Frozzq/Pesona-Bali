@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS2-54220082-NathanTanoko</title>
+</head>
+<body>
+    <style>
+        :root{
+            --maincolor:#163235;
+            --secondclr:#4468E2;
+            --thirdcolor:#1C4961;
+        }
+        *{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all .2s;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+        html{
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            padding: 2rem 7%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            z-index: 100000;
+            background-color: white;
+        }
+        .header #logo{
+            color: black;
+            font-size: 3rem;
+        }
+        .header #logo span{
+            color: var(--secondclr);
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            margin-left: 1rem;
+            padding: 1rem;
+            color: var(--maincolor);
+        }
+        .navbar a:hover{
+            color: var(--secondclr);
+        }
+        .navbar.active{
+            left: 0;
+        }
+        .icons #menu-bars{
+            font-size: 2rem;
+            color: black;
+            display: none;
+        }
+        .icons #menu-bars:hover{
+        color: #4468E2;
+        }
+        .background-image{
+            position: relative;
+            background: url(images/background1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            margin-top: 6%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .background-image{
+            display: flex;
+            flex-direction: column;
+        }
+        .background-image h1{
+            font-size: 50px;
+            color: white;
+        }
+        .background-image h1 span{
+            color: var(--secondclr);
+        }
+        .background-image p{
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem 3rem;
+        }
+        .recomended-hotel{
+            padding: 3rem 7%;
+        }
+        .recomended-hotel h1{
+            font-size: 40px;
+            text-align: center;
+            color: black;
+            padding: 1rem 0;
+        }
+        .recomended-hotel h1 span{
+            color: var(--secondclr);
+        }
+        .recomended-hotel h1 span:hover{
+            letter-spacing: 4px;
+        }
+        .main-hotel{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .main-hotel .inner-hotel{
+            flex: 280px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px;
+        }
+        .main-hotel .inner-hotel .main-image img{
+            width: 100%;
+        }
+        .inner-hotel h2{
+            font-size: 2rem;
+            padding: 1rem 0;
+        }
+        .inner-hotel p{
+            font-size: 1.5rem;
+        }
+        .dist-icons{
+            margin-left: 1rem;
+        }
+        .budaya{
+            padding: 3rem 7%;
+        }
+        .budaya h1{
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        .budaya h1 span{
+            color: var(--secondclr);
+        }
+        .budaya h1 span:hover{
+            letter-spacing: 3px;
+        }
+        .mian-budaya{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px;
+        }
+        .inner-budaya{
+            flex: 1 1 45rem;
+        }
+        .inner-budaya img{
+            width: 100%;
+        }
+        .budaya-images img{
+            height: 175px;
+        }
+        .budaya-images p {
+        font-size: 1.5rem; 
+        text-align: justify; 
+        padding: 1rem; 
+        }
+        .tours{
+            padding: 3rem 7%;
+        }
+        .tours h1{
+            color: black;
+            text-align: center;
+            font-size: 40px;
+            padding: 1.5rem 0;
+        }
+        .tours h1 span{
+            color: var(--secondclr);
+        }
+        .tours h1 span:hover{
+            letter-spacing: 4px;
+        }
+        .mian-tour{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .inner-tour{
+            flex: 1 1 45rem;
+            padding: 2rem 4rem;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .inner-tour p{
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        @media (max-width:768px) {
+            html{
+                font-size: 55%;
+            }
+            .icons #menu-bars{
+                display: initial;
+            
+            }
+            .header{
+                padding: 2rem;
+            }
+            .navbar{
+                position: absolute;
+                top: 100%;
+                left: 100%;
+                right: 0;
+            }
+            .navbar a{
+                display: block;
+                font-size: 1.5rem;
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+    <header class="header">
+        <a href="#" id="logo">Pesona <span>Bali</span></a>
+
+        <nav class="navbar">
+            <a href="#beranda">Beranda</a>
+            <a href="#hotel">Hotel</a>
+            <a href="#idBudaya">Budaya</a>
+            <a href="#tour">Tour</a>
+        </nav>
+    </header>
+
+    <div class="background-image" id="beranda">
+        <h1>Bera<span>nda</span></h1>
+        <p>Bali merupakan pulau yang menjadi tujuan wisata dunia.</p> 
+        <p>Bali dikenal sebagai Pulau Dewata (island God/island Paradise) merupakan salah satu tempat wisata terbaik di Indonesia dan terbaik di Dunia.</p>
+        <p>Selain terdapat objek wisata yang indah, Bali kaya akan tradisi, seni, budaya dan lain - lain yang menjadi daya tarik bagi wisatawan yang berkunjung</p>
+    </div>
+
+    <div class="recomended-hotel" id="hotel">
+        <h1><span>Hotel</span></h1>
+        <div class="main-hotel">
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel1.jpg" alt="">
+                </div>
+                
+                <h2>W Bali</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel2.jpg" alt="">
+                </div>
+                <h2>Alaya Resort</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel3.jpg" alt="">
+                </div>
+                <h2>RIMBA Jimbaran BALI by AYANA</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel4.jpg" alt="">
+                </div>
+                <h2>Marriott Bali Seminyak Resort</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel5.jpg" alt="">
+                </div>
+                <h2>AYANA Resort & Spa</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+            <div class="inner-hotel">
+                <div class="main-image">
+                    <img src="images/hotel6.jpg" alt="">
+                </div>
+                <h2>Amadea Resort & Villas Seminyak</h2>
+                <p>Bar tepi kolam, Coffee shop, Fasilitas rapat, Kotak penyimpanan aman, dan Layanan kamar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="budaya" id="idBudaya">
+        <h1><span>Budaya</span></h1>
+        <div class="mian-budaya">
+
+            <div class="inner-budaya">
+                <img src="images/barong1.webp" alt="">
+            </div>
+
+            
+            <div class="inner-budaya budaya-images">
+                <img src="images/barong2.jpg" alt="">
+                <img src="images/barong3.jpg" alt="">
+                <p>Barong Bali adalah satu di antara begitu banyak ragam seni pertunjukan Bali. Barong merupakan sebuah tarian tradisional Bali yang ditandai dengan Topeng dan kostum badan yang dapat dikenakan oleh satu atau dua orang untuk menarikannya.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tours" id="tour">
+        <h1><span>Tour</span></h1>
+        <div class="mian-tour">
+            <div class="inner-tour">
+                <p>Layanan travel keliling Bali dengan berbagai pilihan paket dan bermalam di hotel-hotel berbintang lima. Hubungi kami di no kontak : 021 - 12345678</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background-color: #163235; color: white; text-align: center; padding: 1rem;">
+        &copy; 2024 Nathan Tanoko. All rights reserved.
+    </footer>
+</body>
+</html>
